@@ -35,11 +35,12 @@ class ApiDetails(EmbeddedDocument):
     isJson = BooleanField(default=False)
     jsonData = StringField(default="{}")
 
-    def get_headers(self):
+    def get_headers(self, csrf_token):
         headers = {}
         for header in self.headers:
             headers[header["headerKey"]] = header["headerValue"]
         return headers
+
 
 
 class Intent(Document):
