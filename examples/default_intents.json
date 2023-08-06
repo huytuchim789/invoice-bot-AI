@@ -12,7 +12,9 @@
     "trainingData": [
       { "text": "i want to cancel", "entities": [] },
       { "text": "cancel that", "entities": [] },
-      { "text": "cancel", "entities": [] }
+      { "text": "cancel", "entities": [] },
+      { "text": "stop", "entities": [] },
+      { "text": "end", "entities": [] }
     ],
     "userDefined": false,
     "apiTrigger": false,
@@ -30,12 +32,166 @@
       { "text": "howdy", "entities": [] },
       { "text": "hey", "entities": [] },
       { "text": "hello", "entities": [] },
-      { "text": "hi", "entities": [] }
+      { "text": "hi", "entities": [] },
+      { "text": "greetings", "entities": [] },
+      { "text": "good morning", "entities": [] },
+      { "text": "good afternoon", "entities": [] },
+      { "text": "good evening", "entities": [] }
     ],
     "userDefined": false,
     "apiTrigger": false,
     "intentId": "init_conversation",
     "_id": { "$oid": "59aae7bd26f6f60007b06fb7" },
     "speechResponse": "Hi {{context[\"username\"] }} ### What can i do for you ?"
+  },
+  {
+    "name": "CreateInvoice",
+    "trainingData": [
+      { "text": "How do I create a new electronic invoice?", "entities": [] },
+      { "text": "How can I generate a new invoice?", "entities": [] },
+      { "text": "Steps to create an electronic invoice?", "entities": [] },
+      { "text": "Tell me about creating invoices.", "entities": [] },
+      { "text": "Walk me through invoice creation.", "entities": [] }
+    ],
+    "userDefined": false,
+    "apiTrigger": false,
+    "intentId": "create_invoice",
+    "_id": { "$oid": "59aae7bd26f6f60007b06fb8" },
+    "speechResponse": "To create a new electronic invoice, go to the \"Invoices\" section and click on the \"Create New Invoice\" button. Fill in the required details, such as customer information, items sold, and payment terms. Once done, click \"Save\" to generate the new invoice."
+  },
+  {
+    "name": "SendInvoices",
+    "trainingData": [
+      { "text": "Can I send invoices to multiple customers at once?", "entities": [] },
+      { "text": "Is there a way to send multiple invoices together?", "entities": [] },
+      { "text": "How to send invoices to multiple customers?", "entities": [] },
+      { "text": "Sending invoices to multiple clients?", "entities": [] },
+      { "text": "Bulk invoice delivery?", "entities": [] }
+    ],
+    "userDefined": false,
+    "apiTrigger": false,
+    "intentId": "send_invoices",
+    "_id": { "$oid": "59aae7bd26f6f60007b06fb9" },
+    "speechResponse": "Yes, you can send invoices to multiple customers simultaneously. In the \"Invoices\" section, select the invoices you want to send, then click on the \"Send\" button. Choose the delivery method, either via email or web, and the invoices will be sent to the respective customers."
+  },
+  {
+    "name": "PaymentStatus",
+    "trainingData": [
+      { "text": "How can I track the payment status of my invoices?", "entities": [] },
+      { "text": "Checking payment status of invoices?", "entities": [] },
+      { "text": "Where to find invoice payment status?", "entities": [] },
+      { "text": "View payment status of invoices.", "entities": [] },
+      { "text": "Tell me about invoice payment updates.", "entities": [] }
+    ],
+    "userDefined": false,
+    "apiTrigger": false,
+    "intentId": "payment_status",
+    "_id": { "$oid": "59aae7bd26f6f60007b06fba" },
+    "speechResponse": "To track the payment status of your invoices, navigate to the \"Payments\" tab. Here, you will see a list of all your invoices and their corresponding payment status, whether paid, pending, or overdue."
+  },
+  {
+    "name": "CustomizeInvoice",
+    "trainingData": [
+      { "text": "Is it possible to customize the invoice template?", "entities": [] },
+      { "text": "Can I personalize the invoice layout?", "entities": [] },
+      { "text": "Modifying invoice template?", "entities": [] },
+      { "text": "Custom invoice design?", "entities": [] },
+      { "text": "Changing invoice appearance?", "entities": [] }
+    ],
+    "userDefined": false,
+    "apiTrigger": false,
+    "intentId": "customize_invoice",
+    "_id": { "$oid": "59aae7bd26f6f60007b06fbb" },
+    "speechResponse": "Yes, you can customize the invoice template to match your brand. Go to the \"Settings\" section, then choose \"Invoice Templates.\" From there, you can edit the layout, add your company logo, and modify the color scheme to suit your preferences."
+  },
+  {
+    "name": "ImportCustomers",
+    "trainingData": [
+      { "text": "How do I import my existing customer list into MiInvoice?", "entities": [] },
+      { "text": "Importing customer data to MiInvoice?", "entities": [] },
+      { "text": "Add existing customers to MiInvoice?", "entities": [] },
+      { "text": "Uploading customer list to MiInvoice?", "entities": [] },
+      { "text": "Migrating customer data to MiInvoice?", "entities": [] }
+    ],
+    "userDefined": false,
+    "apiTrigger": false,
+    "intentId": "import_customers",
+    "_id": { "$oid": "59aae7bd26f6f60007b06fbc" },
+    "speechResponse": "To import your existing customer list, go to the \"Customers\" section and click on the \"Import Customers\" button. Follow the instructions to upload a CSV file containing your customer data. MiInvoice will then automatically add these customers to your list."
+  },
+  {
+    "name": "RecurringInvoices",
+    "trainingData": [
+      { "text": "Can I set up recurring invoices for regular clients?", "entities": [] },
+      { "text": "Recurring billing for regular customers?", "entities": [] },
+      { "text": "Setting up automated invoices?", "entities": [] },
+      { "text": "Creating invoices on a schedule?", "entities": [] },
+      { "text": "How to generate recurring invoices?", "entities": [] }
+    ],
+    "userDefined": false,
+    "apiTrigger": false,
+    "intentId": "recurring_invoices",
+    "_id": { "$oid": "59aae7bd26f6f60007b06fbd" },
+    "speechResponse": "Yes, you can set up recurring invoices for regular clients. When creating a new invoice, select the \"Recurring\" option and choose the frequency (e.g., weekly, monthly). MiInvoice will automatically generate and send the invoice at the specified intervals."
+  },
+  {
+    "name": "Security",
+    "trainingData": [
+      { "text": "How secure is MiInvoice for handling sensitive financial information?", "entities": [] },
+      { "text": "Data security measures in MiInvoice?", "entities": [] },
+      { "text": "Is my financial data safe?", "entities": [] },
+      { "text": "Privacy and security in MiInvoice?", "entities": [] },
+      { "text": "Protecting sensitive information in MiInvoice?", "entities": [] }
+    ],
+    "userDefined": false,
+    "apiTrigger": false,
+    "intentId": "security",
+    "_id": { "$oid": "59aae7bd26f6f60007b06fbe" },
+    "speechResponse": "MiInvoice takes data security seriously. We use industry-standard encryption and follow best practices to safeguard your sensitive financial information. Rest assured that your data is protected and only accessible to authorized users."
+  },
+  {
+    "name": "ExportInvoiceData",
+    "trainingData": [
+      { "text": "Can I export my invoice data for accounting purposes?", "entities": [] },
+      { "text": "Exporting invoices for accounting?", "entities": [] },
+      { "text": "How to get invoice data in a file?", "entities": [] },
+      { "text": "Generating invoice reports for accounting?", "entities": [] },
+      { "text": "Downloading invoice data?", "entities": [] }
+    ],
+    "userDefined": false,
+    "apiTrigger": false,
+    "intentId": "export_invoice_data",
+    "_id": { "$oid": "59aae7bd26f6f60007b06fbf" },
+    "speechResponse": "Absolutely! In the \"Reports\" section, you can generate and export various reports, including invoice summaries, payment history, and tax reports, in CSV or PDF format for easy integration with your accounting system."
+  },
+  {
+    "name": "MobileApp",
+    "trainingData": [
+      { "text": "Is there a mobile app for MiInvoice?", "entities": [] },
+      { "text": "Mobile application for MiInvoice?", "entities": [] },
+      { "text": "MiInvoice on mobile?", "entities": [] },
+      { "text": "Availability on smartphones?", "entities": [] },
+      { "text": "Access MiInvoice on my phone?", "entities": [] }
+    ],
+    "userDefined": false,
+    "apiTrigger": false,
+    "intentId": "mobile_app",
+    "_id": { "$oid": "59aae7bd26f6f60007b06fc0" },
+    "speechResponse": "Yes, we have a mobile app available for both Android and iOS devices. You can download it from the respective app stores and access MiInvoice on the go."
+  },
+  {
+    "name": "ContactSupport",
+    "trainingData": [
+      { "text": "How do I contact customer support if I encounter any issues?", "entities": [] },
+      { "text": "Support contact information?", "entities": [] },
+      { "text": "Helpdesk for MiInvoice?", "entities": [] },
+      { "text": "Customer support assistance?", "entities": [] },
+      { "text": "Facing a problem, what to do?", "entities": [] }
+    ],
+    "userDefined": false,
+    "apiTrigger": false,
+    "intentId": "contact_support",
+    "_id": { "$oid": "59aae7bd26f6f60007b06fc1" },
+    "speechResponse": "If you encounter any issues or have questions, you can reach out to our customer support team via the \"Support\" section. Submit your query, and our team will get back to you promptly to assist you further."
   }
 ]

@@ -28,7 +28,7 @@ def api():
     :return json:
     """
     request_json = request.get_json(silent=True)
-    csrf_token = request_json["csrf_token"]
+    csrf_token = request_json.get("csrf_token")
     result_json = copy.deepcopy(request_json)
 
     if request_json:
@@ -162,7 +162,7 @@ def api():
                                     undefined=SilentUndefined)
                 result_json["speechResponse"] = split_sentence(template.render(**context))
         app.logger.info(request_json.get("input"), extra=result_json)
-        return build_response.build_json(headers)
+        return build_response.build_json(result_json)
     else:
         return abort(400)
 
