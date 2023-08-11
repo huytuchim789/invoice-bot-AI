@@ -5,7 +5,7 @@ from app.commons import build_response
 from app.intents.models import Intent
 
 train = Blueprint('train_blueprint', __name__,
-                  url_prefix='/train')
+                  url_prefix='/api/train')
 
 
 @train.route('/<story_id>/data', methods=['POST'])

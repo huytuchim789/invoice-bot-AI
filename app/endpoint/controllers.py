@@ -28,7 +28,7 @@ def api():
     :return json:
     """
     request_json = request.get_json(silent=True)
-    print(request_json)
+    csrf_token = request_json.get("csrf_token")
     result_json = copy.deepcopy(request_json)
 
     if request_json:
@@ -132,6 +132,9 @@ def api():
                 parameters = result_json["extractedParameters"]
                 headers = intent.apiDetails.get_headers()
                 app.logger.info("headers %s" % headers)
+                if csrf_token:
+                    headers["Authorization"] = f"Bearer {csrf_token}"
+                print(headers)
                 url_template = Template(
                     intent.apiDetails.url, undefined=SilentUndefined)
                 rendered_url = url_template.render(**context)

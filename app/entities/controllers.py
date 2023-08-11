@@ -7,7 +7,7 @@ from app.commons.utils import update_document
 from app.entities.models import Entity
 
 entities_blueprint = Blueprint('entities_blueprint', __name__,
-                               url_prefix='/entities')
+                               url_prefix='/api/entities')
 
 
 @entities_blueprint.route('/', methods=['POST'])

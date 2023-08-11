@@ -7,7 +7,7 @@ export class ChatService {
   constructor(private http:HttpClient) { }
 
   converse(intent, botId = 'default') {
-    return this.http.post(environment.ikyBackend + `api/v1`, intent).toPromise();
+    return this.http.post(environment.ikyBackend + `v1`, intent).toPromise();
   }
 
 }
