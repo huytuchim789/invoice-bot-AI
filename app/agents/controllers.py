@@ -4,7 +4,7 @@ from app.agents.models import Bot
 from app.commons import build_response
 
 bots = Blueprint('bots_blueprint', __name__,
-                 url_prefix='/agents/<bot_name>')
+                 url_prefix='/api/agents/<bot_name>')
 
 
 @bots.route('/config', methods=['PUT'])

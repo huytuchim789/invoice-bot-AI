@@ -13,7 +13,7 @@ from app.intents.models import Parameter
 from app.nlu.tasks import train_models
 
 intents = Blueprint('intents_blueprint', __name__,
-                    url_prefix='/intents')
+                    url_prefix='/api/intents')
 
 
 @intents.route('/', methods=['POST'])

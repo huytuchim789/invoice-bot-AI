@@ -3,7 +3,7 @@ from flask import Blueprint
 from app.commons import build_response
 from app.nlu.tasks import train_models
 
-nlu = Blueprint('nlu_blueprint', __name__, url_prefix='/nlu')
+nlu = Blueprint('nlu_blueprint', __name__, url_prefix='/api/nlu')
 
 
 @nlu.route('/build_models', methods=['POST'])
